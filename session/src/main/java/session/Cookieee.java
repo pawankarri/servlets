@@ -11,6 +11,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/Cookieee")
 public class Cookieee extends HttpServlet {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	try
@@ -18,7 +23,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		resp.setContentType("type/html");
 		PrintWriter pw=resp.getWriter();
 		Cookie c[]=req.getCookies();
-		pw.print("hello"+c[0].getValue());
+		pw.println("hello"+c[0].getValue());
 		pw.close();
 	}
 	catch(Exception e)
